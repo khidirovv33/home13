@@ -9,7 +9,7 @@ $primaryColor: (
     primary: #F9F8FD,  mygreen: #447C2A
 );
 $colors: red, green, blue, yellow, brown, gray, black, white, pink, purple,
-  orange, lightblue, lightgray, aqua;
+  orange, lightblue, lightgray, aqua darkblue;
 $fonts: 100, 200, 300, 400, 500, 600, 700, 800, 900;
 $displays: flex, grid, inline, block, none;
 $positions: fixed, relative, absolute, sticky;
@@ -24,7 +24,7 @@ $buttons: (
   error: red,
   warning: orange,
 );
-$colors: red, blue, green;
+$colors: red, blue, green darkblue;
 
 @each $color in $colors {
   .hover-bg-#{$color}:hover {
@@ -64,26 +64,8 @@ $text-colors: red, blue, green, white;
 
 }
 
-.container1{
-max-width: 1200px;
-margin: 0 auto;
-border-radius: 50px;
-background-image: url("Image-00.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  
-  .conter05{
-max-width: 1200px;
-margin: 0 auto;
-border-radius: 50px;
-background-image: url("Map (1).png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-   
-  }
+
+
 
 
 @each $key, $value in $buttons {
@@ -258,6 +240,29 @@ $colors: red, blue, green, black;
   }
 }
 
+
+$bg-colors: (
+  "block1": #00486D,
+  "block2": #E4ECF0,
+  "block3": #99B6C5,
+  "block4": #002B41
+ 
+  );
+
+
+
+@each $name, $color in $bg-colors {
+  .#{$name} {
+    background-color: $color;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    transition: all 0.3s ease;
+
+
+}
+
 @media (max-width: 500px) {
   @for $i from 1 through 100 {
     .m-w-#{$i} {
@@ -390,13 +395,6 @@ $colors: red, blue, green, black;
     }
   }
 }
-$bg-images: Image-00;
 
-@each $img in $bg-images {
-  .bg-#{$img} {
-    background-image: url("../img/#{$img}.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
+
 }
